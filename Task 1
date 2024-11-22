@@ -1,0 +1,24 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int score = 85; // Example score
+        Console.WriteLine($"The letter grade for {score} is {DetermineGrade(score)}");
+    }
+
+    static string DetermineGrade(int score)
+    {
+        if (score >= 90)
+            return "A";
+        else if (score >= 80)
+            return "B";
+        else if (score >= 70)
+            return "C";
+        else if (score >= 60)
+            return "D";
+        else
+            return "F";
+    }
+}
