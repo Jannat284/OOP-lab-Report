@@ -1,0 +1,28 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int[] arr = { 3, 5, 7, 2, 8, 6 };
+        (int maxValue, int maxIndex) = FindMaxValue(arr);
+        Console.WriteLine($"Maximum value: {maxValue}, Index: {maxIndex}");
+    }
+
+    static (int, int) FindMaxValue(int[] arr)
+    {
+        if (arr.Length == 0)
+            return (0, -1);  // Return 0 and -1 if the array is empty
+        int maxValue = arr[0];
+        int maxIndex = 0;
+        for (int i = 1; i < arr.Length; i++)
+        {
+            if (arr[i] > maxValue)
+            {
+                maxValue = arr[i];
+                maxIndex = i;
+            }
+        }
+        return (maxValue, maxIndex);
+    }
+}
