@@ -1,0 +1,73 @@
+using System;
+
+namespace CustomerManagement
+{
+    // Customer class to store and manage customer information
+    public class Customer
+    {
+        // Fields
+        public int CustomerID;
+        public string CustomerName;
+        public double TotalBill;
+        private double Discount;  // Private field for Discount
+
+        // Constructor to initialize customer details
+        public Customer(int customerID, string customerName, double totalBill)
+        {
+            CustomerID = customerID;
+            CustomerName = customerName;
+            TotalBill = totalBill;
+            // Set discount based on the total bill
+            SetDiscount();
+        }
+
+        // Method to set the discount based on the total bill
+        private void SetDiscount()
+        {
+            if (TotalBill > 10000)
+            {
+                Discount = TotalBill * 0.20; // 20% discount for bills over 10,000
+            }
+            else if (TotalBill > 5000)
+            {
+                Discount = TotalBill * 0.10; // 10% discount for bills over 5,000
+            }
+            else
+            {
+                Discount = TotalBill * 0.05; // 5% discount for any other amount
+            }
+        }
+
+        // Method to display customer information
+        public void DisplayCustomerInfo()
+        {
+            Console.WriteLine($"Customer ID: {CustomerID}");
+            Console.WriteLine($"Customer Name: {CustomerName}");
+            Console.WriteLine($"Total Bill: ${TotalBill:F2}");
+            Console.WriteLine($"Discount: ${Discount:F2}");
+            Console.WriteLine($"Final Amount After Discount: ${TotalBill - Discount:F2}");
+            
+        }
+    }
+
+    // Main class to create customer objects and display their details
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create five customer objects
+            Customer customer1 = new Customer(1, "Jannat", 12000);
+            Customer customer2 = new Customer(2, "Pranto", 4500);
+            Customer customer3 = new Customer(3, "Nusrat", 7000);
+            Customer customer4 = new Customer(4, "Jacke", 15000);
+            Customer customer5 = new Customer(5, "william", 3000);
+
+            // Display all customer information
+            customer1.DisplayCustomerInfo();
+            customer2.DisplayCustomerInfo();
+            customer3.DisplayCustomerInfo();
+            customer4.DisplayCustomerInfo();
+            customer5.DisplayCustomerInfo();
+        }
+    }
+}
