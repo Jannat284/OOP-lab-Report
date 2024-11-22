@@ -1,0 +1,38 @@
+using System;
+
+namespace ArrayTasks
+{
+    class Program
+    {
+        // Method to find the index of a number in the array
+        public static int FindIndex(int[] arr, int number)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == number)
+                {
+                    return i;
+                }
+            }
+            return -1; // Return -1 if the number is not found
+        }
+
+        static void Main(string[] args)
+        {
+            // Example array of numbers
+            int[] numbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            int targetNumber = 5;
+            
+            // Find and print the index of the target number
+            int index = FindIndex(numbers, targetNumber);
+            if (index != -1)
+            {
+                Console.WriteLine($"The index of {targetNumber} is {index}");
+            }
+            else
+            {
+                Console.WriteLine($"{targetNumber} is not in the array");
+            }
+        }
+    }
+}
