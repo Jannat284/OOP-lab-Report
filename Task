@@ -1,0 +1,20 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        EvenOrOdd();
+    }
+
+    static void EvenOrOdd()
+    {
+        for (int num = 1; num <= 10; num++)
+        {
+            if (num % 2 == 0)
+                Console.WriteLine($"{num} is even");
+            else
+                Console.WriteLine($"{num} is odd");
+        }
+    }
+}
