@@ -1,0 +1,32 @@
+using System;
+
+namespace ArrayTasks
+{
+    class Program
+    {
+        // Method to count the occurrences of a number in the array
+        public static int CountOccurrences(int[] arr, int number)
+        {
+            int count = 0;
+            foreach (int num in arr)
+            {
+                if (num == number)
+                {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        static void Main(string[] args)
+        {
+            // Example array of numbers
+            int[] numbers = { 1, 2, 3, 4, 5, 5, 6, 7, 8, 9, 5 };
+            int targetNumber = 5;
+            
+            // Count and print the occurrences of the target number
+            int count = CountOccurrences(numbers, targetNumber);
+            Console.WriteLine($"{targetNumber} appears {count} times in the array");
+        }
+    }
+}
